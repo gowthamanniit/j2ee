@@ -1,0 +1,22 @@
+public class gowthamanServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public gowthamanServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		PrintWriter pw=response.getWriter();
+		
+		String un=request.getParameter("un");  
+		String pa=request.getParameter("pa");
+		pw.println("hai this is servlet "+ un);  // used to display browser
+		pw.println("hai this is servlet "+ pa);
+		System.out.println("summa java only print");			
+	}
