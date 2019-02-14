@@ -1,3 +1,15 @@
+//html file:
+
+<form name="myform" method="post" action="/Saravanan/gowthamanServlet">
+		<input type="text" name="un" placeholder="Enter Your Name Here"></input><br>
+<input type="password" name="pa" placeholder="Enter Password Here"></input><hr
+			noshade="noshade">
+		<br>
+<input type="submit" name="b1" value="cllickme"></input>
+		
+		</form>
+// servlet file:
+
 public class gowthamanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
