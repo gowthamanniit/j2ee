@@ -1,0 +1,87 @@
+
+
+	Transfering Data:
+	==============
+
+	def:
+		Transfer data one page to another page.
+
+
+	two types methods:
+	===========		
+	1.setAttribute
+	2.getAttribute
+
+	use:
+	===
+	    we can take data at any page.
+	
+
+	syntax:setAttribute:
+	================
+
+	request.setAttribute("variable","value");
+
+	ex:
+	request.setAttribute("myname","gowthaman");
+	int mark=100;
+	request.setAttribute("mark",mark);
+
+	note:
+	reqeust is object of HttpServletRequest
+
+	syntax:getAttribute:
+	==============
+	request.getAttribute("variable");
+	
+	ex:	
+	String getName=request.getAttribute("myname");
+	int getMark=(Integer)request.getAttribute("mark");
+			
+
+	important:
+	=========
+	*) don't use response.sendRedirect (because don't take values set,get attribute)
+	*) only use RequestDispatcher --> forward only.
+
+	ex:
+		htmlfile:
+		=======
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form method="post" action="/mypgms/LoginServlet">
+
+Enter User Name :<input type="text" name="t1">
+<br>
+Enter Password :<input type="password" name="t2">
+
+<input type="submit" value="clickme">
+</form>
+</body>
+</html>
+
+		loginservelet:
+		===========
+		String un=request.getParameter("t1");
+		String pa=request.getParameter("t2");
+		
+		request.setAttribute("username", un);
+		request.setAttribute("password", pa);
+		
+		RequestDispatcher rd=request.getRequestDispatcher("/SimpleServlet");
+		rd.forward(request, response);
+	
+				
+		simpleservlet:
+		==========	
+		out.println("<br> User Name : "+request.getAttribute("username"));
+		out.println("<br> Password  :"+request.getAttribute("password"));
+
+	
+			
