@@ -1,0 +1,47 @@
+
+	J2EE: (advanced java)
+	java2 enterprise edition.
+
+	use: to create web application.
+
+	this course contains two softwares.
+
+	1. servlet --> controller (java code,html code )
+	2. jsp (java server page) --> view  (java code,html code)
+
+	software: 1) Eclipse jee application.		
+		  2) Apache Tomcat Server(communicate to servlet + jsp)
+
+	how to install eclipse jee application software ?
+	
+	step 1: confirm in your system 32 or 64 bit os.
+	step 2: software open --> choose Eclipse IDE for Enterprise java developers.
+	step 3: ......
+
+	how to install web server ? (apache tomcat,glassfish,weblogic...)
+	
+	1) window menu in eclipse jee application--> show view --> servers
+	2) click this link -->
+	  --> download and install -->--> folder select-->i accept --> finish.
+	  --> wait upto 10 minutes.
+	3) next --> finish
+	 
+	
+	simple html program:
+	====================
+	1)file -->new -->dynamic web project --> project name -->next -->finish
+	2)create one folder to web content.
+	3)create html file
+	4)server start (right click)--> if error no problem ->directly run(ctrl+f11)
+	choose manually define new server.	
+	5) next -->finish (allow access).
+
+
+	
+
+		   
+
+		
+
+		
+	
