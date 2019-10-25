@@ -1,14 +1,20 @@
 html to servlet:
 =================
-    <form action="/projectname/serveltname">
-    
+        <form action="/projectname/serveltname">    
 servlet to servlet:
 ==================
-
+		RequestDispatcher rd=request.getRequestDispatcher("pgm7extra");
+		rd.forward(request,response);
 servlet to jsp:
 =============
 
+
 html to jsp:
 ============
+        <form action="/projectname/jspfoldername/jsppgm.jsp">
+servlet to html
+===============
+		RequestDispatcher rd=request.getRequestDispatcher("HtmlFIle/pgm7.html");
+		rd.include(request, response);
+        
 
-<form action="/projectname/jspfoldername/jsppgm.jsp">
