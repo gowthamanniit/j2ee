@@ -10,3 +10,5 @@ servlet to jsp:
 
 html to jsp:
 ============
+
+<form action="/projectname/jspfoldername/jsppgm.jsp">
