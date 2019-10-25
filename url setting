@@ -16,5 +16,8 @@ servlet to html
 ===============
 		RequestDispatcher rd=request.getRequestDispatcher("HtmlFIle/pgm7.html");
 		rd.include(request, response);
+		or
+		RequestDispatcher rd=request.getRequestDispatcher("/HtmlFIle/pgm4.html");
+    		rd.include(request, response);
         
 
