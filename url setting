@@ -1,0 +1,12 @@
+html to servlet:
+=================
+    <form action="/projectname/serveltname">
+    
+servlet to servlet:
+==================
+
+servlet to jsp:
+=============
+
+html to jsp:
+============
