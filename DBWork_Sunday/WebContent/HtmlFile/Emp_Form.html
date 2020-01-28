@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+#tb
+{
+border=2px solid red;
+}
+</style>
+<script type="text/javascript">
+function fun()
+{
+	var s=aa.p1.value;
+	
+	if (s=="gowthaman")
+		{
+		//alert("success");
+		return true;
+		}
+	else
+		{
+		//alert("failure")
+		return false;
+		}
+}
+
+function fun2() //onkeypress
+{
+	
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var data = xhr.responseText;
+            //alert(data);
+        }
+    }
+ // alert("test");
+    xhr.open('GET', '/DBWork_Sunday/EmpServlet', true);
+    xhr.send(null);
+}
+</script>
+</head>
+<body>
+<form name="aa" action="/DBWork_Sunday/EmpServlet" onsubmit="return fun()">
+
+<table id="tb">
+<!-- <tr><th>Enter Employee No.</th><td><input type="text" name="t1"></td></tr> -->
+ <tr><th>Enter password .</th><td><input type="password" name="p1"></td></tr>
+ <tr><th>Enter Employee Name.</th><td><input type="text" name="t2" onkeypress="fun2()"></td></tr>
+<!--<tr><th>Enter Employee salary.</th><td><input type="text" name="t3"></td></tr>
+<tr><th>Enter Employee Dob.</th><td><input type="date" name="t4"></td></tr>
+-->
+<tr><th>Click the Button </th><td><input type="submit" value="Searching-all-related-data"></td></tr>
+ 
+</table>
+
+</form>
+</body>
+</html>
