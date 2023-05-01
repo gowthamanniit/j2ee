@@ -1,0 +1,167 @@
+html file: (cook.html)
+==========
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/myproject/mycook1">
+
+<input type="text" name="t1" placeholder="enter user name:"> <br>
+<input type="password" name="t2" placeholder="enter password name:"> <br>
+<input type="text" name="t3" placeholder="enter city:"> <br>
+<input type="submit" value="store cokkie">
+
+</form>
+</body>
+</html>
+=================================
+servelet file : mycook1.java
+===============================
+package mypackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class mycook1
+ */
+@WebServlet("/mycook1")
+public class mycook1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public mycook1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		
+		String user=request.getParameter("t1");
+		String pass=request.getParameter("t2");
+		String city=request.getParameter("t3");
+		
+		out.println("<h1>add cookie or create cookie");
+		
+//		Cookie c1=new Cookie("user", "sathiya");
+//		Cookie c2=new Cookie("pass","kamala@123");
+//		Cookie c3=new Cookie("city","velayuthampalayam");
+		Cookie c1=new Cookie("user", user);
+		Cookie c2=new Cookie("pass",pass);
+		Cookie c3=new Cookie("city",city);
+		
+		
+		
+		// delete cookie after 60 secs
+		c1.setMaxAge(30);
+		c2.setMaxAge(50);
+		c3.setMaxAge(70);
+		
+		response.addCookie(c1);
+		response.addCookie(c2);
+		response.addCookie(c3);
+		
+		
+		out.println("cookie stored");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+================================================
+servlet file : mycook2
+=================================
+package mypackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class mycook2
+ */
+@WebServlet("/mycook2")
+public class mycook2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public mycook2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+
+		Cookie ans[]=request.getCookies();
+		int len=0;
+		if (ans!=null)
+		{
+		 len=ans.length;
+		}
+		out.println("<h1>Total cookies:"+len);
+		
+		for(int i=0;i<len;i++)
+		{
+			out.println("<br>cookie name:"+ans[i].getName());
+			out.println("cookie value:"+ans[i].getValue());
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+
+
+==========================================running steps==============================
+
+step 1: run html file
+
+step 2: run mycook2 (ex: http://localhost:8081/myproject/mycook2)
+
+refresh after 30secs 50secs 70 secs
