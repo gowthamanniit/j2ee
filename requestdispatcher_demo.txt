@@ -1,0 +1,29 @@
+RequestDispatcher:
+=============
+
+use:
+	1 ) to combine two files output in single file
+	2) forward file
+
+syntax:1
+=====
+	RequestDispatcher objectname=request.getRequestDispatcher("filename");
+	objectname.include(request,response);
+syntax:2
+=====
+	RequestDispatcher objectname=request.getRequestDispatcher("filename");
+	objectname.forward(request,response);
+
+ex:1
+===
+	RequestDispatcher rd=request.getRequestDispatcher("/htmlfile/pgm3.html");
+	rd.include(request,response);
+ex:2
+===	
+	RequestDispatcher rd=request.getRequestDispatcher("/serveletname");
+	rd.forward(request,response);
+
+
+
+	
+
