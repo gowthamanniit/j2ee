@@ -1,0 +1,96 @@
+J2EE:
+====
+1) Servlet
+	Servlet-------> Server Environment
+		    server running.........
+		    output will come on browser
+	
+html-->front end (view purpose ,input )
+servlet-->(java code ) model
+controller-->business logic
+
+how to open ?
+
+desktop: eclipse jee oxygen
+
+file--> new --> dynamic web project
+	project name: myj2ee
+
+projectname--> web content -->  right click --> new --> folder
+	htmlfile --> right click --> new --> html file
+	filename.html --> next finish
+
+	run --> ctrl + f11
+	
+	or
+	
+	play button
+
+	manually define new server
+
+	choose: apache
+
+	version: tomcat 8.0 version
+
+	next
+
+	//tomcat installation directory:
+
+	download and install 
+	
+	i accept : dot
+	create new folder	
+	d:/mytomcat8
+
+	wait upto 3 mins for downloading tomcat 8
+
+	next 
+
+	finish
+
+	we will see output in browser
+
+	-----------------------------
+	window menu --> browser -->chrome (it will changed default browser)
+
+	-----------------------------------------------------------------------------------------------------------
+
+	html to servlet connection:
+	===================
+	html file:
+		
+	servlet file:
+		project folder --> java resources --> src--> right click --> create new package
+		--> right click--> new -->servlet
+
+		it will come httpServelt errors(6)
+		we must add .jar file (servelt-api.jar)
+
+		how to add jar file:
+
+
+		project name -->right click--> properties
+		-->java build path --> libraries -->add external jar
+		--> apache tomcate downloaded dir --> lib folder -->servlet-api.jar
+		apply and close.
+			all errors cleared.
+
+<form action="/myj2ee/MyServlet">
+<h1>welcome to j2ee</h1>
+<h1>welcome to j2ee</h1>
+<h1>welcome to j2ee</h1>
+<h1>welcome to j2ee</h1>
+<h1>welcome to j2ee</h1>
+<input type="submit" value="Clicme">
+</form>
+
+
+
+		
+
+			
+	
+
+
+	
+2) JSP (Java Server Package)9
