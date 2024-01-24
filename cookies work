@@ -1,9 +1,12 @@
 A cookie is a kind of information that is stored at client side.
-A cookie is a small piece of information that is persisted between the multiple client requests.
+A cookie is a small piece of information that is persisted between 
+the multiple client requests.
 
 How Cookie works
-By default, each request is considered as a new request. In cookies technique, we add cookie with response from the servlet. 
-So cookie is stored in the cache of the browser. After that if request is sent by the user, cookie is added with request by default. 
+By default, each request is considered as a new request. 
+In cookies technique, we add cookie with response from the servlet. 
+So cookie is stored in the cache of the browser. 
+After that if request is sent by the user, cookie is added with request by default. 
 Thus, we recognize the user as the old user.
 
 Types of Cookie
@@ -12,10 +15,13 @@ There are 2 types of cookies in servlets.
 Non-persistent cookie
 Persistent cookie
 Non-persistent cookie
-It is valid for single session only. It is removed each time when user closes the browser.
+It is valid for single session only. 
+It is removed each time when user closes the browser.
 
 Persistent cookie
-It is valid for multiple session . It is not removed each time when user closes the browser. It is removed only if user logout or signout.
+It is valid for multiple session . 
+It is not removed each time when user closes the browser. 
+It is removed only if user logout or signout.
 
 
 Advantage of Cookies
@@ -26,7 +32,8 @@ It will not work if cookie is disabled from the browser.
 Only textual information can be set in Cookie object.
 
 Cookie class
-javax.servlet.http.Cookie class provides the functionality of using cookies. It provides a lot of useful methods for cookies.
+javax.servlet.http.Cookie class provides the functionality of using cookies. 
+It provides a lot of useful methods for cookies.
 
 Constructor of Cookie class
 Constructor	Description
@@ -37,14 +44,23 @@ There are given some commonly used methods of the Cookie class.
 
 Method	Description
 public void setMaxAge(int expiry)	Sets the maximum age of the cookie in seconds.
-public String getName()	Returns the name of the cookie. The name cannot be changed after creation.
+public String getName()	Returns the name of the cookie. 
+The name cannot be changed after creation.
+
 public String getValue()	Returns the value of the cookie.
 public void setName(String name)	changes the name of the cookie.
 public void setValue(String value)	changes the value of the cookie.
 Other methods required for using Cookies
-For adding cookie or getting the value from the cookie, we need some methods provided by other interfaces. They are:
-public void addCookie(Cookie ck):method of HttpServletResponse interface is used to add cookie in response object.
-public Cookie[] getCookies():method of HttpServletRequest interface is used to return all the cookies from the browser.
+
+For adding cookie or getting the value from the cookie, 
+we need some methods provided by other interfaces. They are:
+public void addCookie(Cookie ck):
+method of HttpServletResponse interface is used to add 
+cookie in response object.
+
+public Cookie[] getCookies():
+method of HttpServletRequest interface is used to return 
+all the cookies from the browser.
 
 How to create Cookie?
 ======================
@@ -61,7 +77,8 @@ How to get Cookies?
 ===================
 Cookie ck[]=request.getCookies();  
 for(int i=0;i<ck.length;i++){  
- out.print("<br>"+ck[i].getName()+" "+ck[i].getValue());//printing name and value of cookie  
+ out.print("<br>"+ck[i].getName()+" "+ck[i].getValue());
+//printing name and value of cookie  
 }  
 
 program: index.html
