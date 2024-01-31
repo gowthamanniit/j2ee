@@ -1,0 +1,12 @@
+don't use RequestDispatcher before printwriter. (it will not work)
+
+RequestDispatcher only use after printwriter
+ex:
+PrintWriter out=response.getWriter();
+		
+		int rno=Integer.parseInt(request.getParameter("t1"));	
+		String sname=request.getParameter("t2");
+		int smark=Integer.parseInt(request.getParameter("t3"));
+		
+		RequestDispatcher rd=request.getRequestDispatcher("/htmlfile/DbInsert.html");
+		rd.include(request, response);
