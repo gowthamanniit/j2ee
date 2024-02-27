@@ -1,0 +1,14 @@
+RequestDispatcher:
+==================
+use: combine multiple files into single web page.
+syntax:
+RequestDispatcher obj=request.getRequestDispatcher("file path");
+
+obj.include(request,response);
+
+ex:
+
+RequestDispatcher rd=request.getRequestDispatcher("/html/file3.html");
+rd.include(request,response);
+#write servlet code
+
